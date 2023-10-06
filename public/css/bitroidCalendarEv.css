@@ -1,0 +1,187 @@
+/*
+ * CalendarEv by Bitroid
+ * version 1.0.0, build: 1
+ * Copyright © 2017 Bitroid | bitroid.ru
+ * licensed under MIT license.
+ *
+ * Project page:    http://bitroid.ru/plugins/CalendarEv/
+ * GitHub page:     https://github.com/bitroidhub/CalendarEv/
+ *
+ * ==========================================================
+ */
+
+.calendarev-container-calendar {
+	display: block;
+	font-family: "Tahoma", sans-serif;
+    position: relative;
+    background: #fff;
+	min-width: 200px;
+	min-height: 50px;
+	width: 300px;
+	height: auto;
+	border: 1px solid #ccc;
+}
+    .calendarev-container-calendar table {
+        width: 100%;
+        border: 0;
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+    }
+
+	.calendarev-calendar-head {
+		display: block;
+		position: relative;
+		padding: 20px 0;
+		max-width: 100%;
+		width: 100%;
+	}
+
+		.calendarev-calendar-head .prev,
+		.calendarev-calendar-head .next {
+			color: rgba(0,0,0,0.5);
+			font-size: 18px;
+			display: block;
+			position: absolute;
+			top: 30%;
+			transition: 0.3s all ease;
+		}
+
+		.calendarev-calendar-head .prev:hover,
+		.calendarev-calendar-head .next:hover {
+			color: rgba(0,0,0,1);
+			cursor: pointer;
+		}
+
+		.calendarev-calendar-head .prev {
+			left: 10px;
+		}
+
+		.calendarev-calendar-head .next {
+			right: 10px;
+		}
+
+		.calendarev-calendar-head .calendarev-selects {
+			display: block;
+			position: relative;
+			margin: 0 40px;
+			max-width: 100%;	
+		}
+
+			.calendarev-calendar-head .calendarev-selects select {
+				display: table-cell;
+				width: auto;	
+				position: relative;
+				font-size: 14px;
+				padding: 5px 15px;
+			}
+
+			.calendarev-calendar-head .calendarev-selects select.calendarev-years{
+				text-align: center;
+			}
+
+		.calendarev-calendar-body {
+			display: table;
+			position: relative;
+			width: 100%;
+			border-collapse: collapse;
+			background-color: #fff;
+		}
+
+			.calendarev-calendar-body th {
+				padding: 10px;
+				font-size: 14px;
+				text-transform: uppercase;
+				font-weight: 400;
+				color: #000;
+				text-align: center;
+				background: #ECECEC;
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+				width: 42px;
+			}
+
+			.calendarev-calendar-body .calendarev-day {
+				font-size: 12px;
+				text-align: center;
+				background-color: #fff;
+				position: relative;
+				width: 42px;
+				height: 42px;
+			}
+
+			.calendarev-calendar-body .calendarev-day:hover {
+				cursor: pointer;
+				font-size: 16px;
+			}
+
+			.calendarev-calendar-body .calendarev-day-current,
+			.calendarev-calendar-body .calendarev-day-current:hover {
+				background-color: #ECECEC;
+			}
+
+			.calendarev-calendar-body .calendarev-day-event,
+			.calendarev-calendar-body .calendarev-day-event:hover {
+				background-color: #FF3C3C;
+				color: #fff;
+			}
+
+			.calendarev-calendar-body .calendarev-day-selected,
+			.calendarev-calendar-body .calendarev-day-selected:hover {
+				font-weight: 600;
+				font-size: 16px;
+			}
+
+			.calendarev-day-event .event-popup {
+				display: none;
+				position: absolute;
+				bottom: 47px;
+				left: 0;
+				background-color: rgba(0,0,0,0.7);
+				font-size: 11px;
+				color: #fff;
+				padding: 5px 7px;
+				z-index: 99;	
+			}
+
+			.calendarev-day-event .event-popup:before {
+				content: '';
+				display: block;
+				position: absolute;
+				border: 5px solid transparent;	
+				border-top: 5px solid rgba(0,0,0,0.7);
+				bottom: -10px;
+				left: 17px;
+			}
+
+			.calendarev-calendar-body .calendarev-day-event:hover > .event-popup {
+				display: block;
+			}
+
+.calendarev-events-container {
+	display: block;
+	position: relative;
+	min-width: 250px;
+	width: auto;
+	margin-top: 15px;
+}
+
+	.calendarev-events-container .event-block {
+		display: block;
+		border-top: 1px solid #ccc;
+		padding: 10px 15px;
+	}
+
+	.calendarev-events-container .event-block:nth-child(odd) {
+		background-color: #ECECEC;
+	}
+
+	.calendarev-events-container .event-block h3 {
+		font-size: 16px;
+		margin-top: 0;
+		font-weight: 400;
+		padding: 0 0 5px 0;
+	}
+
+	.calendarev-events-container .event-block article {
+		font-size: 12px;
+	}
