@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital@1&display=swap");
 
-$accent: #0088a9;
+$accent: #FF3C3C;
+$accent-translucent: rgba(255, 60, 60, 0.8);
 $light: #edf0f1;
 $dark: #24252a;
-$error: #e1341e;
+$error: #FF3C3C;
 
 * {
     box-sizing: border-box;
@@ -69,7 +70,7 @@ header {
 }
 
 .cta:hover {
-    background-color: rgba(0, 136, 169, 0.8);
+    background-color: $accent-translucent;
     color: $dark;
 }
 
@@ -187,7 +188,7 @@ header {
     text-align: center;
     height: 100px;
     width: 100%;
-    background: #2f2f2f;
+    background: $dark;
 
     &__info-block {
         display: flex;
@@ -228,6 +229,9 @@ header {
         padding: 10px;
         font-size: 2em;
         color: #ffffff;
+        &:hover {
+            color: $accent;
+        }
     }
 }
 

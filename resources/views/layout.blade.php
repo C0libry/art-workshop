@@ -12,6 +12,12 @@
     <script type="text/javascript" src="{{ asset('js/mobile.js') }}" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bitroidCalendarEv.css') }}">
+    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/moment-with-locales.min.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/bitroidCalendarEv.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/calendar.js') }}" defer></script>
     @yield('head')
 </head>
 

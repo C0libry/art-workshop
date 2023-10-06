@@ -17,7 +17,7 @@
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Регистрация</p>
 
                                     <!-- Validation Errors -->
-                                    {{-- <x-auth-validation-errors class="mb-4 error" :errors="$errors" /> --}}
+                                    <x-auth-validation-errors class="mb-4 error" :errors="$errors" />
 
                                     <form class="mx-1 mx-md-4" method="POST" action="{{ route('register') }}">
                                         @csrf
