@@ -25,7 +25,7 @@
                                             <div class="form-outline flex-fill mb-0">
                                                 <input id="email" class="block mt-1 w-full form-control" type="email"
                                                     name="email" :value="old('email')" required autofocus />
-                                                <label class="form-label" for="form3Example3c">Your Email</label>
+                                                <label class="form-label" for="form3Example3c">Email</label>
                                             </div>
                                         </div>
 
@@ -35,7 +35,7 @@
                                             <div class="form-outline flex-fill mb-0">
                                                 <input id="password" class="form-control block mt-1 w-full" type="password"
                                                     name="password" required autocomplete="current-password" />
-                                                <label class="form-label" for="form3Example4c">Password</label>
+                                                <label class="form-label" for="form3Example4c">Пароль</label>
                                             </div>
                                         </div>
 
@@ -48,9 +48,7 @@
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                             <div class="flex items-center justify-end mt-4">
-                                                <button class="ml-3 btn btn-primary btn-lg">
-                                                    {{ __('Log in') }}
-                                                </button>
+                                                <button class="ml-3 btn btn-primary btn-lg">Войти</button>
                                             </div>
                                         </div>
                                     </form>

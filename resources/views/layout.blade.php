@@ -61,7 +61,6 @@
                     <li><a href="{{ route('login') }}">Вход</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="{{ route('register') }}">Регистрация</a>
             <p class="menu cta">Меню</p>
         </header>
 
@@ -71,7 +70,6 @@
             </a>
             <div class="overlay__content">
                 <a href="{{ route('login') }}">Вход</a>
-                <a href="{{ route('register') }}">Регистрация</a>
             </div>
         </div>
     @endif
