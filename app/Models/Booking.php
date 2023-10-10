@@ -10,4 +10,11 @@ class Booking extends Model
     use HasFactory;
 
     protected $table = 'bookings';
+
+    protected $guarded = [];
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class, 'room_id', 'id');
+    }
 }
