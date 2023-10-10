@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BookingRoomController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +15,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+
+Route::post('/booking_room', [BookingRoomController::class, 'create'])->name('booking_room');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

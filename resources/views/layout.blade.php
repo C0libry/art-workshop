@@ -27,16 +27,12 @@
             <a class="logo" href="{{ route('home.index') }}">
                 <ion-icon name="planet-outline" alt="logo"></ion-icon>
             </a>
-            <nav>
+            {{-- <nav>
                 <ul class="nav__links">
-                    <li><a href="{{ route('user') }}">{{ Auth::user()->username }}</a></li>
                 </ul>
-            </nav>
-            <li><a href="{{ route('user') }}"><img class="profile_picture" src="{{ Auth::user()->profile_picture }}"
-                        alt="avatar"></a></li>
+            </nav> --}}
             <form class="cta" method="POST" action="{{ route('logout') }}">
                 @csrf
-
                 <x-responsive-nav-link class="logout" :href="route('logout')"
                     onclick="event.preventDefault(); this.closest('form').submit();">Выход</x-responsive-nav-link>
             </form>
@@ -48,10 +44,8 @@
                 <ion-icon class="close" name="close-outline">&times;</ion-icon>
             </a>
             <div class="overlay__content">
-                <a href="{{ route('user') }}">{{ Auth::user()->username }}</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-responsive-nav-link :href="route('logout')"
                         onclick="event.preventDefault(); this.closest('form').submit();">Выход</x-responsive-nav-link>
                 </form>
