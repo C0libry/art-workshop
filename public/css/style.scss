@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital@1&display=swap");
 
-$accent: #FF3C3C;
-$accent-translucent: rgba(255, 60, 60, 0.8);
-$light: #edf0f1;
-$dark: #24252a;
-$error: #FF3C3C;
-
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+:root {
+    --accent: #1d71b8;
+    --accent-additional: #27348b;
+    --light: #edf0f1;
+    --dark: #24252a;
+    --error: #ff3c3c;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
 
 ion-icon {
     font-size: 64px;
-    color: $accent;
+    color: var(--accent);
 }
 
 header {
@@ -26,7 +28,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 18px 10%;
-    background-color: $dark;
+    background-color: var(--dark);
 }
 
 .logo {
@@ -43,7 +45,7 @@ header {
 .overlay__content a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    color: $light;
+    color: var(--light);
     text-decoration: none;
 }
 
@@ -56,13 +58,13 @@ header {
 }
 
 .nav__links li a:hover {
-    color: $accent;
+    color: var(--accent);
 }
 
 .cta {
     margin-left: 20px;
     padding: 9px 25px;
-    background-color: $accent;
+    background-color: var(--accent);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -70,23 +72,23 @@ header {
 }
 
 .cta:hover {
-    background-color: $accent-translucent;
-    color: $dark;
+    background-color: var(--accent-additional);
+    color: var(--light);
 }
 
 .logout {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    color: $light;
+    color: var(--light);
     text-decoration: none;
 }
 
 .logout:hover {
-    color: $dark;
+    color: var(--dark);
 }
 
 .profile_picture {
-    fill: $accent;
+    fill: var(--accent);
     width: 45px;
     border-radius: 50%;
 }
@@ -105,7 +107,7 @@ header {
     z-index: 100;
     left: 0;
     top: 0;
-    background-color: $dark;
+    background-color: var(--dark);
     overflow-x: hidden;
     transition: all 0.5s ease 0s;
 
@@ -116,7 +118,7 @@ header {
         transition: all 0.3s ease 0s;
         &:hover,
         &:focus {
-            color: $accent;
+            color: var(--accent);
         }
     }
     &--active {
@@ -137,16 +139,16 @@ header {
     top: 20px;
     right: 45px;
     font-size: 60px;
-    color: $light;
+    color: var(--light);
     cursor: pointer;
 }
 
 .close:hover {
-    color: $accent;
+    color: var(--accent);
 }
 
 .error {
-    color: $error;
+    color: var(--dark);
 }
 
 .clear-btn {
@@ -161,7 +163,7 @@ header {
     text-align: center;
     margin: 10px;
     padding: 8px;
-    background: $error;
+    background: var(--dark);
     border-radius: 5px;
     bottom: 30px;
     min-width: 400px;
@@ -173,7 +175,7 @@ header {
     text-align: center;
     margin: 10px;
     padding: 8px;
-    background: $accent;
+    background: var(--accent);
     border-radius: 5px;
     bottom: 30px;
     min-width: 400px;
@@ -188,7 +190,7 @@ header {
     text-align: center;
     height: 100px;
     width: 100%;
-    background: $dark;
+    background: var(--dark);
 
     &__info-block {
         display: flex;
@@ -224,7 +226,7 @@ header {
         padding: 0;
         margin: 0;
         ion-icon:hover {
-            color: $accent;
+            color: var(--accent);
         }
     }
 
