@@ -6,6 +6,15 @@
 @endsection
 
 @section('main_content')
+    <div id="rooms" class="rooms_wrapper">
+        @foreach ($rooms as $room)
+            <div class="room">
+                <img src="{{ $room->image }}">
+                <span>{{ $room->name }}</span>
+                {{-- <span>{{ $room->description }}</span> --}}
+            </div>
+        @endforeach
+    </div>
     <div id="calendar-1" class="demos__item-calendar"></div>
     <button id="order">Забронировать</button>
     <form id="bookingForm" method="POST">
