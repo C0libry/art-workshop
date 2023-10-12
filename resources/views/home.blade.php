@@ -6,7 +6,7 @@
 @endsection
 
 @section('main_content')
-    <div id="rooms" class="rooms_wrapper">
+    <div id="rooms" class="rooms-wrapper">
         @foreach ($rooms as $room)
             <div class="room">
                 <img src="{{ $room->image }}">
@@ -22,9 +22,17 @@
         <div id="show_booking_date" class="dateform"></div>
         <input id="booking_date" type="hidden" name="booking_date" value="">
         <div class="timeform">c
-            <select id="timebegin" class="timebegin" name="booking_start"></select>
+            <select id="timebegin" class="timebegin" name="booking_start">
+                @for ($i = 8; $i < 20; $i++)
+                    <option class="timebegin__option" value="{{ $i }}">{{ $i . ':00' }}</option>
+                @endfor
+            </select>
             по
-            <select id="timeend" class="timeend" name="booking_end"></select>
+            <select id="timeend" class="timeend" name="booking_end">
+                @for ($i = 9; $i < 21; $i++)
+                    <option class="timeend__option" value="{{ $i }}">{{ $i . ':00' }}</option>
+                @endfor
+            </select>
         </div>
         <div class="groupformstep">
             <div class="formstep">
