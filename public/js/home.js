@@ -5,6 +5,9 @@ let order = document.getElementById('order');
 order.addEventListener("click", show_form);
 form.addEventListener('submit', booking_room);
 document.querySelector('#timebegin').addEventListener('change', timebegin_blur);
+document.querySelectorAll('.room').forEach(element => {
+    element.addEventListener('click', select_room);
+});
 
 document.querySelector('#bookingForm').style.display = "none";
 
@@ -29,6 +32,12 @@ async function booking_room(event) {
 }
 
 function show_form() {
+
+    // Проверяем, что аудитория была выбрана
+    if (document.querySelector('#room_id').value === '') {
+        alert('Выберите аудиторию');
+        return;
+    }
 
     // Проверяем, что дата была выбрана
     if (!document.querySelector('.calendarev-day-selected')) {
@@ -61,7 +70,7 @@ function timebegin_blur() {
     let begin = document.querySelector('#timebegin').value;
     let end = document.querySelector('#timeend').value;
     if (+begin >= +end) {
-        document.querySelector('#timeend').querySelector('[value="' + (+begin + 1) +'"]').selected = true;
+        document.querySelector('#timeend').querySelector('[value="' + (+begin + 1) + '"]').selected = true;
     }
     document.querySelectorAll('.timeend__option').forEach(element => {
         if (+begin >= +element.value) {
@@ -72,4 +81,11 @@ function timebegin_blur() {
             element.style.display = "block";
         }
     });
+}
+
+function select_room(event) {
+    if (element = document.querySelector('.room--selected'))
+        element.classList.remove('room--selected');
+    event.currentTarget.classList.add('room--selected');
+    document.querySelector('#room_id').value = event.currentTarget.id;
 }

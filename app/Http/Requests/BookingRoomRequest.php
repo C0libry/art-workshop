@@ -23,6 +23,10 @@ class BookingRoomRequest extends FormRequest
     {
 
         return [
+            'room_id' => ['required', 'integer'],
+            'booking_date' => ['required', 'string', 'max:255'],
+            'booking_start' => ['required', 'integer'],
+            'booking_end' => ['required', 'integer'],
             'fullname' => ['required', 'string', 'regex:/(^[A-Z][a-z]+ [A-Z][a-z]+( [A-Z][a-z]+)?$)|(^[А-Я][а-я]+ [А-Я][а-я]+( [А-Я][а-я]+)?$)/u', 'max:255'],
             'age' => ['required', 'integer'],
             'institute' => ['required', 'string', 'max:255'],
