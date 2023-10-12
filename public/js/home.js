@@ -5,10 +5,6 @@ let order = document.getElementById('order');
 order.addEventListener("click", show_form);
 form.addEventListener('submit', booking_room);
 document.querySelector('#timebegin').addEventListener('change', timebegin_blur);
-document.querySelector('#timeend').addEventListener('change', timeend_blur);
-
-console.log(href);
-console.log('test');
 
 document.querySelector('#bookingForm').style.display = "none";
 
@@ -61,24 +57,9 @@ function show_form() {
     document.querySelector('.dateform').innerText = date.toLocaleDateString();
 }
 
-// function form_time() {
-//     // for (let i = 0; i < 15; i++) {}
-//     let begin = document.querySelector('#timebegin').value;
-//     let end = document.querySelector('#timeend').value;
-//     // document.querySelector('.timebegin__option').value
-//     if (begin >= end) {
-//         if (end < 21) {
-//             end++;
-//         } else {
-//             begin--;
-//         }
-//     }
-// }
-
 function timebegin_blur() {
     let begin = document.querySelector('#timebegin').value;
     let end = document.querySelector('#timeend').value;
-    console.log(begin + " " + end);
     if (+begin >= +end) {
         document.querySelector('#timeend').querySelector('[value="' + (+begin + 1) +'"]').selected = true;
     }
@@ -91,7 +72,4 @@ function timebegin_blur() {
             element.style.display = "block";
         }
     });
-}
-
-function timeend_blur() {
 }
