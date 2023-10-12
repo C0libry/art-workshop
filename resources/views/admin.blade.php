@@ -5,4 +5,6 @@
 @endsection
 
 @section('main_content')
+    <main>
+    </main>
 @endsection
