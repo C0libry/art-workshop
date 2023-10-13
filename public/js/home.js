@@ -62,8 +62,8 @@ function show_form() {
     }
 
     document.querySelector('#bookingForm').style.display = "block";
-    document.querySelector('#booking_date').value = date.toLocaleDateString();
-    document.querySelector('.dateform').innerText = date.toLocaleDateString();
+    document.querySelector('#show_booking_date').innerText = date.toLocaleDateString();
+    document.querySelector('#booking_date').value = date.toLocaleDateString('ru');
 }
 
 function timebegin_blur() {

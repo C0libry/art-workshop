@@ -14,12 +14,16 @@ class BookingRoomController extends Controller
     {
         if (strlen($request->booking_start) == 1)
             $booking_start = '0' . $request->booking_start;
+        else
+            $booking_start = $request->booking_start;
 
         if (strlen($request->booking_end) == 1)
             $booking_end = '0' . $request->booking_end;
+        else
+            $booking_end = $request->booking_end;
 
-        $start = Carbon::createFromFormat('m/d/Y H', $request->booking_date . ' ' . $booking_start);
-        $end = Carbon::createFromFormat('m/d/Y H', $request->booking_date . ' ' . $request->booking_end);
+        $start = Carbon::createFromFormat('d.m.Y H', $request->booking_date . ' ' . $booking_start);
+        $end = Carbon::createFromFormat('d.m.Y H', $request->booking_date . ' ' . $booking_end);
         $booking = new Booking();
         $booking->booking_start = $start;
         $booking->booking_end = $end;
