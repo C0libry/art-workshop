@@ -295,6 +295,28 @@ header {
     }
 }
 
+.pop-up-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.booking-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
 .my-btn {
     font-size: 20px;
     padding: 10px 25px;
@@ -307,6 +329,32 @@ header {
 .my-btn:hover {
 background-color: var(--accent-additional);
 color: var(--light);
+}
+
+.my-table {
+    margin: 0;
+    border: 2px solid black;
+    border-collapse: collapse;
+
+    tr {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        border: 1px solid black;
+        td {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    }
+
+    th {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid black;
+    }
 }
 
 @media screen and (max-height: 450px) {

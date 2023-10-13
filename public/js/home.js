@@ -1,15 +1,15 @@
-let href = window.location.href;
 let form = document.getElementById('bookingForm');
 let order = document.getElementById('order');
 
 order.addEventListener("click", show_form);
 form.addEventListener('submit', booking_room);
 document.querySelector('#timebegin').addEventListener('change', timebegin_blur);
+document.querySelector('.pop-up-wrapper').addEventListener('click', close_pop_up);
 document.querySelectorAll('.room').forEach(element => {
     element.addEventListener('click', select_room);
 });
 
-document.querySelector('#bookingForm').style.display = "none";
+document.querySelector('.pop-up-wrapper').style.display = "none";
 
 async function booking_room(event) {
     let formData = new FormData(form);
@@ -24,7 +24,7 @@ async function booking_room(event) {
         const response = await fetch(url, options);
         const result = await response.text();
         console.log(result);
-        document.querySelector('#bookingForm').style.display = "none";
+        document.querySelector('.pop-up-wrapper').style.display = "none";
         return result;
     } catch (error) {
         console.error(error);
@@ -61,7 +61,7 @@ function show_form() {
         return;
     }
 
-    document.querySelector('#bookingForm').style.display = "block";
+    document.querySelector('.pop-up-wrapper').style.display = "flex";
     document.querySelector('#show_booking_date').innerText = date.toLocaleDateString();
     document.querySelector('#booking_date').value = date.toLocaleDateString('ru');
 }
@@ -88,4 +88,10 @@ function select_room(event) {
         element.classList.remove('room--selected');
     event.currentTarget.classList.add('room--selected');
     document.querySelector('#room_id').value = event.currentTarget.id;
+}
+
+function close_pop_up(event) {
+    if(event.target.classList.contains('pop-up-wrapper')) {
+        event.target.style.display = "none";
+    }
 }

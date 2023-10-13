@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookingRoomController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookingApproveController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +19,11 @@ use App\Http\Controllers\BookingRoomController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-Route::post('/booking_room', [BookingRoomController::class, 'create'])->name('booking_room');
+Route::post('/booking_room', [BookingRoomController::class, 'create'])->name('booking_room.create');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+Route::patch('/booking_approve', [BookingApproveController::class, 'update'])->name('booking_approve.update');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
