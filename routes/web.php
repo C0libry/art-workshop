@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookingRoomController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingApproveController;
+use App\Http\Controllers\RoomController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,18 +23,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::post('/booking_room', [BookingRoomController::class, 'create'])->name('booking_room.create');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-
-Route::patch('/booking_approve', [BookingApproveController::class, 'update'])->name('booking_approve.update');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+    Route::delete('/delete_room', [RoomController::class, 'delete'])->name('room.delete');
+
+    Route::patch('/booking_approve', [BookingApproveController::class, 'update'])->name('booking_approve.update');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

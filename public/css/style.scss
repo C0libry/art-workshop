@@ -29,6 +29,7 @@ main {
 button {
     padding: 0;
     border: none;
+    background-color: transparent;
 }
 
 ion-icon {
@@ -327,12 +328,16 @@ header {
 }
 
 .my-btn:hover {
-background-color: var(--accent-additional);
-color: var(--light);
+    background-color: var(--accent-additional);
+    color: var(--light);
+}
+
+.my-table-margin {
+    margin: 50px;
 }
 
 .my-table {
-    margin: 0;
+    padding: 0;
     border: 2px solid black;
     border-collapse: collapse;
 
@@ -354,6 +359,11 @@ color: var(--light);
         padding: 10px;
         text-align: center;
         border: 1px solid black;
+    }
+
+    img {
+        width: 200px;
+        height: 100px;
     }
 }
 

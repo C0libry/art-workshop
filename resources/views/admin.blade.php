@@ -7,15 +7,47 @@
 
 @section('main_content')
     <main>
+        <table id="rooms" class="my-table my-table-margin">
+            <thead>
+                <tr>
+                    <th rowspan="1">id</th>
+                    <th rowspan="1">Название</th>
+                    <th rowspan="1">Адрес</th>
+                    <th colspan="1">Описание</th>
+                    <th colspan="1">Изиображение</th>
+                    <th colspan="1">Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($rooms as $room)
+                    <tr>
+                        <th>{{ $room->id }}</th>
+                        <td>{{ $room->name }}</td>
+                        <td>{{ $room->address }}</td>
+                        <td>{{ $room->description }}</td>
+                        <td><img src="{{ $room->image }}" alt=""></td>
+                        <td>
+                            <form id="delete-room-form">
+                                @csrf
+                                @method('DELETE')
+                                <input id="room_id" type="hidden" name="room_id" value="{{ $room->id }}">
+                                <button class="delete-room-btn">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
         <form id="add_room">
             @csrf
         </form>
         <form id="update_room">
             @csrf
         </form>
-        <table class="my-table">
+        <table class="my-table my-table-margin">
             <thead>
-                <!-- Заголовки -->
                 <tr>
                     <th rowspan="1">id</th>
                     <th rowspan="1">ФИО</th>
@@ -36,7 +68,7 @@
                         <td>{{ $book->age }}</td>
                         <td>{{ $book->institute }}</td>
                         <td>
-                            <form id="approve_form">
+                            <form id="approve-form">
                                 @csrf
                                 @method('PATCH')
                                 <input id="book_id" type="hidden" name="book_id" value="{{ $book->id }}">
