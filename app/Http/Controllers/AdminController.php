@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function index()
     {
         $rooms = Room::all();
-        $booking = Booking::all();
+        $booking = Booking::query()->with('room')->get();
         return view('admin')
             ->with('rooms', $rooms)
             ->with('booking', $booking);
