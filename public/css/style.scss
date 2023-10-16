@@ -310,12 +310,19 @@ header {
     z-index: 99;
 }
 
-.booking-form {
+.pop-up-form {
+    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
+    background-color: var(--light);
+    border-radius: 30px;
+}
+
+.my-btn-margin {
+    margin: 30px 0;
 }
 
 .my-btn {
