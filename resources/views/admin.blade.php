@@ -40,21 +40,41 @@
                 @endforeach
             </tbody>
         </table>
-        <form id="add_room">
-            @csrf
-        </form>
-        <form id="update_room">
-            @csrf
-        </form>
+        <button class="my-btn" id="add-room-btn" onclick="show_add_room_form()">Добавить аудиторию</button>
+        <div id="add-room-pop-up" class="pop-up-wrapper">
+            <form id="add-room-form" class="pop-up-form">
+                @csrf
+                <input class="form-control block mt-1 w-full" id="room-name" name="name" value="">
+                <label class="form-label">Название аудитории</label>
+
+                <input class="form-control block mt-1 w-full" id="room-address" name="address" value="">
+                <label class="form-label">Адрес аудитории</label>
+
+                <input class="form-control block mt-1 w-full" id="room-description" name="description" value="">
+                <label class="form-label">Описание аудитории</label>
+
+                <input type="file" class="form-control block mt-1 w-full" id="room-image" name="image" value="">
+                <label class="form-label">Фото аудитории</label>
+
+                <button class="my-btn my-btn-margin">Добавить</button>
+            </form>
+        </div>
+        {{-- <div id="update-room-pop-up" class="pop-up-wrapper">
+            <form id="update-room" clas="pop-up-form">
+                @csrf
+            </form>
+        </div> --}}
         <table class="my-table my-table-margin">
             <thead>
                 <tr>
                     <th rowspan="1">id</th>
+                    <th rowspan="1">Аудитория</th>
                     <th rowspan="1">ФИО</th>
                     <th rowspan="1">Начало</th>
                     <th colspan="1">Конец</th>
                     <th colspan="1">Возраст</th>
                     <th colspan="1">Институт</th>
+                    <th colspan="1">Статус</th>
                     <th colspan="1">Изменить статус</th>
                 </tr>
             </thead>
@@ -62,11 +82,19 @@
                 @foreach ($booking as $book)
                     <tr>
                         <th>{{ $book->id }}</th>
+                        <td>{{ $book->room->name }}</td>
                         <td>{{ $book->fullname }}</td>
                         <td>{{ $book->booking_start }}</td>
                         <td>{{ $book->booking_end }}</td>
                         <td>{{ $book->age }}</td>
                         <td>{{ $book->institute }}</td>
+                        <td class="status">
+                            @if ($book->approved)
+                                Подержено
+                            @else
+                                Не подержено
+                            @endif
+                        </td>
                         <td>
                             <form id="approve-form">
                                 @csrf
