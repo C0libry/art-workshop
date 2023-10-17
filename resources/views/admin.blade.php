@@ -42,18 +42,19 @@
         </table>
         <button class="my-btn" id="add-room-btn" onclick="show_add_room_form()">Добавить аудиторию</button>
         <div id="add-room-pop-up" class="pop-up-wrapper">
-            <form id="add-room-form" class="pop-up-form">
+            <form id="add-room-form" class="pop-up-form" method="POST" action="{{ route('room.create') }}" enctype="multipart/form-data">
                 @csrf
-                <input class="form-control block mt-1 w-full" id="room-name" name="name" value="">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Добавить аудиторию</p>
+                <input class="form-control block mt-1 w-full" id="room-name" name="name" value="" required>
                 <label class="form-label">Название аудитории</label>
 
-                <input class="form-control block mt-1 w-full" id="room-address" name="address" value="">
+                <input class="form-control block mt-1 w-full" id="room-address" name="address" value="" required>
                 <label class="form-label">Адрес аудитории</label>
 
                 <input class="form-control block mt-1 w-full" id="room-description" name="description" value="">
                 <label class="form-label">Описание аудитории</label>
 
-                <input type="file" class="form-control block mt-1 w-full" id="room-image" name="image" value="">
+                <input type="file" class="form-control block mt-1 w-full" id="room-image" name="image">
                 <label class="form-label">Фото аудитории</label>
 
                 <button class="my-btn my-btn-margin">Добавить</button>
