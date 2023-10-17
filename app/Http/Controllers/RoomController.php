@@ -23,7 +23,7 @@ class RoomController extends Controller
             $path = Storage::disk('public_uploads')->put($path, $request->file('image'));
             $room->image = 'uploads/' . $path;
         } else
-            $room->image = 'img/room1.jpg';
+            $room->image = 'uploads/public/images/rooms/room1.jpg';
 
         $room->save();
         return redirect()->route('admin.index');
@@ -36,7 +36,9 @@ class RoomController extends Controller
         $request->validate([
             'room_id' => ['required', 'integer'],
         ]);
-        $room = Room::find($request->room_id);
+        $room = Room::find($request->room_id); //!User::where('username', $request->username)->exists()
+        if (!Room::where('id', '!=', $room->id)->where('image', $room->image)->exists())
+            Storage::disk('public_uploads')->delete(str_replace('uploads/', '', $room->image));
         $room->delete();
     }
 }

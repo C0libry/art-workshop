@@ -25,31 +25,31 @@ class DatabaseSeeder extends Seeder
             'address' => 'Гоголя',
             'name' => 'Аудитория №1',
             'description' => '',
-            'image' => 'img/room1.jpg',
+            'image' => 'uploads/public/images/rooms/room1.jpg',
         ]);
         Room::factory()->create([
             'address' => 'Курчатова',
             'name' => 'Аудитория №2',
             'description' => 'Площадь: 20',
-            'image' => 'img/room2.jpg',
+            'image' => 'uploads/public/images/rooms/room2.jpg',
         ]);
         Room::factory()->create([
             'address' => 'Курчатова',
             'name' => 'Аудитория №3',
             'description' => 'Площадь: 40',
-            'image' => 'img/room2.jpg',
+            'image' => 'uploads/public/images/rooms/room2.jpg',
         ]);
         Room::factory()->create([
             'address' => 'Голандия',
             'name' => 'Аудитория №4',
             'description' => 'Площадь: 20',
-            'image' => 'img/room1.jpg',
+            'image' => 'uploads/public/images/rooms/room1.jpg',
         ]);
         Room::factory()->create([
             'address' => 'Голандия',
             'name' => 'Аудитория №5',
             'description' => 'Площадь: 30',
-            'image' => 'img/room2.jpg',
+            'image' => 'uploads/public/images/rooms/room2.jpg',
         ]);
     }
 }
