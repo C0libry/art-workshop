@@ -21,11 +21,11 @@
             <tbody>
                 @foreach ($rooms as $room)
                     <tr>
-                        <th>{{ $room->id }}</th>
-                        <td>{{ $room->name }}</td>
-                        <td>{{ $room->address }}</td>
-                        <td>{{ $room->description }}</td>
-                        <td><img src="{{ $room->image }}" alt=""></td>
+                        <th class="update-room" id="id">{{ $room->id }}</th>
+                        <td class="update-room" id="name">{{ $room->name }}</td>
+                        <td class="update-room" id="address">{{ $room->address }}</td>
+                        <td class="update-room" id="description">{{ $room->description }}</td>
+                        <td class="update-room"><img src="{{ $room->image }}" alt=""></td>
                         <td>
                             <form id="delete-room-form">
                                 @csrf
@@ -42,7 +42,8 @@
         </table>
         <button class="my-btn" id="add-room-btn" onclick="show_add_room_form()">Добавить аудиторию</button>
         <div id="add-room-pop-up" class="pop-up-wrapper">
-            <form id="add-room-form" class="pop-up-form" method="POST" action="{{ route('room.create') }}" enctype="multipart/form-data">
+            <form id="add-room-form" class="pop-up-form" method="POST" action="{{ route('room.create') }}"
+                enctype="multipart/form-data">
                 @csrf
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Добавить аудиторию</p>
                 <input class="form-control block mt-1 w-full" id="room-name" name="name" value="" required>
@@ -60,11 +61,32 @@
                 <button class="my-btn my-btn-margin">Добавить</button>
             </form>
         </div>
-        {{-- <div id="update-room-pop-up" class="pop-up-wrapper">
-            <form id="update-room" clas="pop-up-form">
+        <div id="update-room-pop-up" class="pop-up-wrapper">
+            <form id="update-room-form" class="pop-up-form" method="POST" action="{{ route('room.update') }}"
+                enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Обновить аудиторию</p>
+
+                <input id="room-id-update" type="hidden" name="id" value="">
+
+                <input class="form-control block mt-1 w-full" id="room-name-update" name="name" value="" required>
+                <label class="form-label">Название аудитории</label>
+
+                <input class="form-control block mt-1 w-full" id="room-address-update" name="address" value=""
+                    required>
+                <label class="form-label">Адрес аудитории</label>
+
+                <input class="form-control block mt-1 w-full" id="room-description-update" name="description"
+                    value="">
+                <label class="form-label">Описание аудитории</label>
+
+                <input type="file" class="form-control block mt-1 w-full" id="room-image-update" name="image">
+                <label class="form-label">Фото аудитории</label>
+
+                <button class="my-btn my-btn-margin">Обновить</button>
             </form>
-        </div> --}}
+        </div>
         <table class="my-table my-table-margin">
             <thead>
                 <tr>

@@ -4,11 +4,18 @@ document.querySelectorAll('#approve-form').forEach(function (elem) {
 document.querySelectorAll('#delete-room-form').forEach(function (elem) {
     elem.addEventListener('submit', delete_room);
 });
+document.querySelectorAll('.update-room').forEach(function (elem) {
+    elem.addEventListener('click', update_room);
+});
 
 let add_room_pop_up = document.querySelector('#add-room-pop-up');
+let update_room_pop_up = document.querySelector('#update-room-pop-up');
 
 add_room_pop_up.style.display = "none";
 add_room_pop_up.addEventListener('click', close_pop_up);
+
+update_room_pop_up.style.display = "none";
+update_room_pop_up.addEventListener('click', close_pop_up);
 
 async function approve(event) {
     let formData = new FormData(event.target);
@@ -73,4 +80,14 @@ function close_pop_up(event) {
     if(event.target.classList.contains('pop-up-wrapper')) {
         event.target.style.display = "none";
     }
+}
+
+function update_room(event) {
+    update_room_pop_up.style.display = "flex";
+    let data = event.target.parentElement;
+    console.log(data);
+    document.querySelector('#room-id-update').value = data.querySelector('#id').innerText;
+    document.querySelector('#room-address-update').value = data.querySelector('#address').innerText;
+    document.querySelector('#room-name-update').value = data.querySelector('#name').innerText;
+    document.querySelector('#room-description-update').value = data.querySelector('#description').innerText;
 }

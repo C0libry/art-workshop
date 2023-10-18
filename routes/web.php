@@ -26,9 +26,11 @@ Route::post('/booking_room', [BookingRoomController::class, 'create'])->name('bo
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
-    Route::delete('/delete_room', [RoomController::class, 'delete'])->name('room.delete');
-    
     Route::post('/add_room', [RoomController::class, 'create'])->name('room.create');
+    
+    Route::put('/update_room', [RoomController::class, 'update'])->name('room.update');
+
+    Route::delete('/delete_room', [RoomController::class, 'delete'])->name('room.delete');
 
     Route::patch('/booking_approve', [BookingApproveController::class, 'update'])->name('booking_approve.update');
 });

@@ -22,6 +22,7 @@ class AddRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'id' => ['nullable', 'integer'],
             'name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:255'],

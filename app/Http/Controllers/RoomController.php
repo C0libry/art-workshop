@@ -28,8 +28,14 @@ class RoomController extends Controller
         $room->save();
         return redirect()->route('admin.index');
     }
-    public function update()
+    public function update(AddRoomRequest $request)
     {
+        $room = Room::find($request->id);
+        $room->name = $request->name;
+        $room->address = $request->address;
+        $room->description = $request->description;
+        $room->update();
+        return redirect()->route('admin.index');
     }
     public function delete(Request $request)
     {
