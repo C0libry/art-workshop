@@ -83,25 +83,25 @@ body {
 
 /* ■■■■■ КОНТЕЙНЕРЫ ■■■■■■■■■■■■■■■■■■ */
 [class*=container] {
-  max-width: 1000px;
-  padding: 0 1rem;
-  margin: 0 auto;
+  max-width: 1000px !important;
+  padding: 0 1rem !important;
+  margin: 0 auto !important;
 }
 
 .container--lg {
-  max-width: 1200px;
+  max-width: 1200px !important;
 }
 
 .container--md {
-  max-width: 800px;
+  max-width: 800px !important;
 }
 
 .container--sm {
-  max-width: 500px;
+  max-width: 500px !important;
 }
 
 .container--xs {
-  max-width: 320px;
+  max-width: 320px !important;
 }
 
 /* ■■■■■ СТИЛИ САЙТА ■■■■■■■■■■■■■■■■■ */
@@ -412,11 +412,8 @@ a.logo > img {
   color: var(--light);
 }
 
-.my-table-margin {
-  margin: 50px;
-}
-
 .my-table {
+  margin: 50px;
   padding: 0;
   border: 2px solid black;
   border-collapse: collapse;

@@ -7,6 +7,7 @@
 
 @section('main_content')
     <main>
+    
         <div id="rooms" class="rooms-wrapper">
             @foreach ($rooms as $room)
                 <div id="{{ $room->id }}" class="room {{ $room->address }}">
@@ -19,9 +20,13 @@
                 </div>
             @endforeach
         </div>
+
         <div id="calendar-1" class="demos__item-calendar"></div>
-        <button class="my-btn my-btn-margin" id="order">Забронировать</button>
+
+        <button class="my-btn" id="order">Забронировать</button>
+
         <div class="pop-up-wrapper">
+
             <form id="bookingForm" class="pop-up-form" method="POST">
                 @csrf
                 <input id="room_id" type="hidden" name="room_id" value="">
@@ -93,6 +98,6 @@
             </form>
         </div>
     </main>
-    
+
     <x-footer />
 @endsection
