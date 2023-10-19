@@ -86,11 +86,13 @@ ion-icon {
 
 
 .header {
+    padding-block: 1rem;
     background-color: var(--dark);
 
     &__body {
-        width: 100%;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 

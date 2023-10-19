@@ -66,7 +66,7 @@
                 <div class="header__body">
                     
                     <a class="logo" href="{{ route('home.index') }}">
-                        <ion-icon name="planet-outline" alt="logo"></ion-icon>
+                        <img src="{{ asset('uploads/public/images/icons/nav-icon.svg') }}" alt="logo">
                     </a>
 
                     <nav>
