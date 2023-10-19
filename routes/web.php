@@ -23,6 +23,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::post('/booking_room', [BookingRoomController::class, 'create'])->name('booking_room.create');
 
+Route::get('/get_boking_on_day/{date}', [BookingRoomController::class, 'get_boking_on_day']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 

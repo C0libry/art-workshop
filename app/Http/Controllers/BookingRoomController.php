@@ -37,4 +37,12 @@ class BookingRoomController extends Controller
         $booking->save();
         return 'ok';
     }
+    public function get_boking_on_day($date)
+    {
+        $start = Carbon::parse($date . ' 00:00:00', 'UTC'); //Carbon::createFromFormat('d.m.Y H:mm:ss', $date . ' 00:00:00');
+        // $end = Carbon::createFromFormat('d.m.Y H:mm:ss', $date . ' 23:59:59');
+        $end = Carbon::parse($date . ' 23:59:59', 'UTC');
+        $booking = Booking::query()->whereBetween('booking_start', [$start, $end])->get();
+        return $booking;
+    }
 }
