@@ -93,5 +93,6 @@
             </form>
         </div>
     </main>
+    
     <x-footer />
 @endsection
