@@ -82,7 +82,7 @@ body {
 }
 
 /* ■■■■■ КОНТЕЙНЕРЫ ■■■■■■■■■■■■■■■■■■ */
-[class*=container] {
+.container {
   max-width: 1000px !important;
   padding: 0 1rem !important;
   margin: 0 auto !important;
@@ -107,11 +107,6 @@ body {
 /* ■■■■■ СТИЛИ САЙТА ■■■■■■■■■■■■■■■■■ */
 main {
   flex-grow: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 ion-icon {
@@ -202,7 +197,7 @@ a.logo > img {
   padding: 15px;
   font-size: 36px;
   display: block;
-  transition: all 0.3s ease 0s;
+  transition: 0.3s;
 }
 .overlay a:hover, .overlay a:focus {
   color: var(--accent);
@@ -316,51 +311,37 @@ a.logo > img {
 }
 
 .rooms-wrapper {
-  padding: 100px 0px;
+  margin-block: 2rem;
   display: grid;
-  margin: auto;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  max-width: 1600px;
+  gap: 2rem;
 }
 
 .room {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 500px;
-  height: 400px;
-  border-radius: 30px;
   background-color: var(--dark);
+  border-radius: 30px;
+  overflow: hidden;
   cursor: pointer;
 }
 .room img {
-  width: 500px;
-  height: 300px;
-  border-radius: 30px;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
-.room div {
-  display: flex;
-  justify-content: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  width: 500px;
-  height: 100px;
-  border-radius: 30px;
+.room > div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
   font-size: 20px;
   background-color: var(--dark);
   color: var(--accent);
+  text-align: center;
 }
 .room--selected {
   background-color: var(--accent);
 }
 .room--selected div {
   background-color: var(--accent);
-  color: var(--light);
-}
-.room--selected span {
   color: var(--light);
 }
 
@@ -399,7 +380,7 @@ a.logo > img {
 }
 
 .my-btn {
-  margin-block: 2rem;
+  margin: 2rem auto;
   padding: 0.5em 2em;
   font-size: 1.25rem;
   border-radius: 0.2em;
@@ -467,7 +448,7 @@ a.logo > img {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .rooms-wrapper {
     display: flex;
     justify-content: center;
@@ -490,7 +471,7 @@ a.logo > img {
     border-radius: 20px;
   }
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1000px) {
   .rooms-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
