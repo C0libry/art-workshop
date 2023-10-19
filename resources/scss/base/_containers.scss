@@ -1,0 +1,18 @@
+/* ■■■■■ КОНТЕЙНЕРЫ ■■■■■■■■■■■■■■■■■■ */
+[class*=container] {
+    max-width: 1000px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+.container--lg {
+    max-width: 1200px;
+}
+.container--md {
+    max-width: 800px;
+}
+.container--sm {
+    max-width: 500px;
+}
+.container--xs {
+    max-width: 320px;
+}

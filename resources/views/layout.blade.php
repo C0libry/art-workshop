@@ -7,17 +7,17 @@
 
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" /> -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bitroidCalendarEv.css') }}">
 
-    <script type="text/javascript" src="{{ asset('js/mobile.js') }}" defer></script>
+    <script src="{{ asset('js/mobile.js') }}" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+    <script src="{{ asset('js/jquery.min.js') }}" defer></script>
+    <script src="{{ asset('js/moment-with-locales.min.js') }}" defer></script>
+    <script src="{{ asset('js/bitroidCalendarEv.js') }}" defer></script>
+    <script src="{{ asset('js/calendar.js') }}" defer></script>
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bitroidCalendarEv.css') }}">
-    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/moment-with-locales.min.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/bitroidCalendarEv.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/calendar.js') }}" defer></script>
     @yield('head')
 </head>
 
@@ -28,7 +28,7 @@
             <div class="header__body">
 
                 <a class="logo" href="{{ route('home.index') }}">
-                    <ion-icon name="planet-outline" alt="logo"></ion-icon>
+                    <img src="{{ asset('uploads/public/images/icons/nav-icon.svg') }}" alt="logo">
                 </a>
 
                 {{-- <nav>

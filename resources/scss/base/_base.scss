@@ -1,0 +1,11 @@
+/* ■■■■■ БАЗОВЫЕ СТИЛИ ■■■■■■■■■■■■■■■ */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--ff-body, sans-serif) !important;
+
+    display: flex;
+    flex-direction: column;
+}
