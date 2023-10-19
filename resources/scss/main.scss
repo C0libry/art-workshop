@@ -1,6 +1,6 @@
 //sass --watch resources/scss/main.scss public/css/style.css
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -13,6 +13,8 @@ html, body {
 }
 
 :root {
+    --ff-body: "Rubik", sans-serif;
+
     --accent: #1d71b8;
     --accent-additional: #27348b;
     --light: #edf0f1;
@@ -21,7 +23,7 @@ html, body {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--ff-body, sans-serif);
 
     display: flex;
     flex-direction: column;
@@ -94,7 +96,6 @@ header {
 .nav__links a,
 .cta,
 .overlay__content a {
-    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     color: var(--light);
     text-decoration: none;
