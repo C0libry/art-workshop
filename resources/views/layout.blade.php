@@ -7,7 +7,7 @@
 
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" /> -->
 
     <script type="text/javascript" src="{{ asset('js/mobile.js') }}" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
@@ -23,21 +23,30 @@
 
 <body>
     @if (Auth::check())
-        <header>
-            <a class="logo" href="{{ route('home.index') }}">
-                <ion-icon name="planet-outline" alt="logo"></ion-icon>
-            </a>
-            {{-- <nav>
-                <ul class="nav__links">
-                </ul>
-            </nav> --}}
-            <form class="cta" method="POST" action="{{ route('logout') }}">
-                @csrf
-                <x-responsive-nav-link class="logout" :href="route('logout')"
-                    onclick="event.preventDefault(); this.closest('form').submit();">Выход</x-responsive-nav-link>
-            </form>
-            <p class="menu cta">Меню</p>
-        </header>
+    <header class="header">
+        <div class="container">
+            <div class="header__body">
+
+                <a class="logo" href="{{ route('home.index') }}">
+                    <ion-icon name="planet-outline" alt="logo"></ion-icon>
+                </a>
+
+                {{-- <nav>
+                    <ul class="nav__links">
+                    </ul>
+                </nav> --}}
+
+                <form class="cta" method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <x-responsive-nav-link class="logout" :href="route('logout')"
+                        onclick="event.preventDefault(); this.closest('form').submit();">Выход</x-responsive-nav-link>
+                </form>
+
+                <p class="menu cta">Меню</p>
+
+            </div>
+        </div>
+    </header>
 
         <div class="overlay">
             <a class="close">
@@ -52,16 +61,24 @@
             </div>
         </div>
     @else
-        <header>
-            <a class="logo" href="{{ route('home.index') }}">
-                <ion-icon name="planet-outline" alt="logo"></ion-icon>
-            </a>
-            <nav>
-                <ul class="nav__links">
-                    <li><a href="{{ route('login') }}">Вход</a></li>
-                </ul>
-            </nav>
-            <p class="menu cta">Меню</p>
+        <header class="header">
+            <div class="container">
+                <div class="header__body">
+                    
+                    <a class="logo" href="{{ route('home.index') }}">
+                        <ion-icon name="planet-outline" alt="logo"></ion-icon>
+                    </a>
+
+                    <nav>
+                        <ul class="nav__links">
+                            <li><a href="{{ route('login') }}">Вход</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="menu cta">Меню</div>
+                
+                </div>
+            </div>
         </header>
 
         <div class="overlay">

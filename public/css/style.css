@@ -64,18 +64,25 @@ button {
   background-color: transparent;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 ion-icon {
   font-size: 64px;
   color: var(--accent);
 }
 
-header {
-  display: flex;
+.header {
   background-color: var(--dark);
 }
+.header__body {
+  width: 100%;
+  display: flex;
+}
 
-.logo {
-  margin-right: auto;
+a.logo {
+  display: block;
 }
 
 .nav__links {
@@ -88,17 +95,11 @@ header {
 .overlay__content a {
   font-weight: 500;
   color: var(--light);
-  text-decoration: none;
-}
-
-.nav__links li {
-  padding: 0px 20px;
 }
 
 .nav__links li a {
-  transition: all 0.3s ease 0s;
+  transition: color 0.3s;
 }
-
 .nav__links li a:hover {
   color: var(--accent);
 }
