@@ -26,6 +26,57 @@ body {
   flex-direction: column;
 }
 
+header, nav, main, footer, section, aside,
+img, picture, video, canvas, svg,
+label, summary, source, iframe, embed {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul, ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+input, button, textarea, select {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+input[type=radio] {
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button, select, input[type=submit], input[type=file], input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
 main {
   flex-grow: 1;
   width: 100%;
@@ -58,16 +109,6 @@ main {
   max-width: 320px;
 }
 
-button {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-}
-
-a {
-  text-decoration: none !important;
-}
-
 ion-icon {
   font-size: 64px;
   color: var(--accent);
@@ -83,8 +124,9 @@ ion-icon {
   justify-content: space-between;
 }
 
-a.logo {
-  display: block;
+a.logo > img {
+  width: 60px;
+  aspect-ratio: 1;
 }
 
 .nav__links {
@@ -349,19 +391,15 @@ a.logo {
   gap: 5px;
 }
 
-.my-btn-margin {
-  margin: 30px 0;
-}
-
 .my-btn {
-  font-size: 20px;
-  padding: 10px 25px;
-  border-radius: 50px;
+  margin-block: 2rem;
+  padding: 0.5em 2em;
+  font-size: 1.25rem;
+  border-radius: 0.2em;
   background-color: var(--accent);
   color: var(--light);
-  transition: all 0.3s ease 0s;
+  transition: 0.3s;
 }
-
 .my-btn:hover {
   background-color: var(--accent-additional);
   color: var(--light);
