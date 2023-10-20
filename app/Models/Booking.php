@@ -13,6 +13,11 @@ class Booking extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'booking_start' => 'datetime',
+        'booking_end' => 'datetime',
+    ];
+
     public function room()
     {
         return $this->belongsTo(Room::class, 'room_id', 'id');

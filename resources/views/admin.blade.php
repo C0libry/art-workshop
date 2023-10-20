@@ -87,7 +87,8 @@
                 <button class="my-btn my-btn-margin">Обновить</button>
             </form>
         </div>
-        <table class="my-table my-table-margin">
+        <div id="calendar-1" class="demos__item-calendar"></div>
+        <table id="booking-table" class="my-table my-table-margin">
             <thead>
                 <tr>
                     <th rowspan="1">id</th>
@@ -107,15 +108,16 @@
                         <th>{{ $book->id }}</th>
                         <td>{{ $book->room->name }}</td>
                         <td>{{ $book->fullname }}</td>
-                        <td>{{ $book->booking_start }}</td>
+                        <td id="booking_start" data-time="{{ $book->booking_start->format('d.m.Y') }}">
+                            {{ $book->booking_start }}</td>
                         <td>{{ $book->booking_end }}</td>
                         <td>{{ $book->age }}</td>
                         <td>{{ $book->institute }}</td>
                         <td class="status">
                             @if ($book->approved)
-                                Подержено
+                                Подтверждено
                             @else
-                                Не подержено
+                                Не подтверждено
                             @endif
                         </td>
                         <td>
